@@ -6,7 +6,6 @@
 . $(dirname "$0")/colors.sh
 
 
-TARGET_DIR=$(find -L ~ -type d | fzf)
 
 if [[ -f $1 ]]; then
     cp $1 $TARGET_DIR
@@ -18,6 +17,7 @@ else
 fi
 
 
+TARGET_DIR=$(find -L ~ -type d | fzf)
 
 ls -allt $TARGET_DIR | less
 
