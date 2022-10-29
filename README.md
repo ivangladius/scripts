@@ -11,5 +11,5 @@ Best Usage:
 add the scripts to your PATH and add aliases to it in your shell config
 exp:
 
-alias fc="fast_copy.sh"
+alias fc='fast_copy.sh'
 
