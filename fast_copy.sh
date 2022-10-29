@@ -4,11 +4,18 @@
 
 TARGET_DIR=$(find -L ~ -type d | fzf)
 
-echo $TARGET_DIR
-
 cp $1 $TARGET_DIR
 
 cd $TARGET_DIR
 
-ls
+
+ls -f
+
+if [[ -f $1 ]]; then
+    echo -e "\n\n### $1 copy succedded ### \n\n"
+else
+    echo -e "\n\n### could not copy $1 ### \n\n"
+fi
+
+
 
