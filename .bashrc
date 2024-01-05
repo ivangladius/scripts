@@ -9,6 +9,8 @@
 
 export PATH="~/.local/bin:$PATH"
 export PATH="~/scripts:$PATH"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 setxkbmap -option caps:escape
 xset r rate 200 40
@@ -54,6 +56,9 @@ alias z='zellij'
 
 alias bconf='nvim ~/.bashrc && source ~/.bashrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
+
+alias te='translate :en'
+alias td='translate :de'
 
 alias c='cd $(find ~/ -type d | fzf)'
 grep_vim() {
