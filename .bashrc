@@ -47,6 +47,10 @@ alias ll='ls -all --color=auto'
 alias la='ls -a --color=auto'
 alias l='ls --color=auto'
 
+
+# alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
+alias h='bash -c "$(history | awk '\''{print $2}'\'' | fzf)"'
+
 alias vim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
@@ -62,29 +66,50 @@ alias nconf='nvim ~/.config/nvim/init.lua'
 alias te='translate :en'
 alias td='translate :de'
 
+alias h='bash -c "$(history | awk '\''{print $2}'\'' | fzf)"'
+
 alias c='cd $(find ~/ -type d | fzf) && ls'
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
     nvim $(grep -rni $1 | fzf)
 }
-alias vf='grep_vim'
+# alias vf='grep_vim'
+
+# fast_copy() {
+#     if [ $# -ne 1 ];then
+# 	echo "usage: fc <item_to_copy>"
+#     else
+# 	cp $1 $(find ~ -type d | fzf)
+#     fi
+# }
 
 fast_copy() {
     if [ $# -ne 1 ];then
 	echo "usage: fc <item_to_copy>"
     else
-	cp $1 $(find ~ -type d | fzf)
+	if [[ ! -e "$1" ]];then
+	    echo "fc error: File $1 does not exist"
+	else
+	    COPY_PATH=$(find ~ -type d | fzf)
+	    cp -r $1 $COPY_PATH
+	    if [[ ! -e "$COPY_PATH" ]];then
+		echo "copy NOT successfull"
+	    else
+		echo "copy SUCCESSFUL"
+	    fi
+	fi
     fi
 }
-fast_copy_into_cwd() {
-    if [ $# -ne 1 ];then
-	echo "usage: fcic <item_to_copy>"
-    else
-	cp $1 $(find . -type d | fzf)
-    fi
-}
-alias ic='fast_copy'
-alias icc='fast_copy_into_cwd'
+
+# fast_copy_into_cwd() {
+#     if [ $# -ne 1 ];then
+# 	echo "usage: fcic <item_to_copy>"
+#     else
+# 	cp $1 $(find . -type d | fzf)
+#     fi
+# }
+alias fc='fast_copy'
+# alias fcic='fast_copy_into_cwd'
 
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
