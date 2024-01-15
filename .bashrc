@@ -10,7 +10,7 @@
 export PATH="~/.local/bin:$PATH"
 export PATH="~/scripts:$PATH"
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH="$GOPATH/bin:$PATH"
 export PATH="/home/max/.qlot/bin:$PATH"
 
 setxkbmap -option caps:escape
@@ -20,6 +20,8 @@ alias e='emacsclient_open'
 alias ed='emacsclient_open_doom'
 alias ee='emacsclient_open_dired'
 alias ec='emacsclient_open_init'
+
+alias code='flatpak run com.vscodium.codium'
 
 emacsclient_open() {
     emacsclient -nw \
@@ -49,7 +51,6 @@ alias l='ls --color=auto'
 
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
-alias h='bash -c "$(history | awk '\''{print $2}'\'' | fzf)"'
 
 alias vim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
@@ -69,10 +70,12 @@ alias td='translate :de'
 alias h='bash -c "$(history | awk '\''{print $2}'\'' | fzf)"'
 
 alias c='cd $(find ~/ -type d | fzf) && ls'
+
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
     nvim $(grep -rni $1 | fzf)
 }
+
 # alias vf='grep_vim'
 
 # fast_copy() {
@@ -116,13 +119,12 @@ alias vpsconn2='ssh root@152.53.16.238'
 
 alias g='lazygit'
 
-VPS='181.215.69.116'
-VPS2='152.53.16.238'
+export VPS='181.215.69.116'
+export VPS2='152.53.16.238'
 
 PS1='[\u@\h \W]\$ '
 
-EDITOR='nvim'
-VISUAL='nvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 
-source /home/max/.config/broot/launcher/bash/br
