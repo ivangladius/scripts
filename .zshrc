@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+setfont ter-132b
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -158,7 +159,10 @@ alias r='. ranger'
 alias z='zellij'
 
 alias bconf='nvim ~/.bashrc && source ~/.bashrc'
+alias yconf='nvim ~/.zshrc && source ~/.zshrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
+alias iconf='nvim ~/.config/i3/config'
+alias qconf='nvim ~/.config/qtile/config.py'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -223,5 +227,14 @@ export VPS2='152.53.16.238'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-export MANPAGER="nvr +Man! -"
+alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
+alias xin='sudo xbps-install'
+alias xr='sudo xbps-remove -Rcon'
+alias xl='xbps-query -l'
+alias xf='xl | grep'
+alias xs='xbps-query -Rs'
+alias xd='xbps-query -x'
+alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
+alias ll='exa -all --icons'
+alias l='exa -l --icons'
 
