@@ -1,13 +1,13 @@
 ## useful scripts and utilities for linux
 ### just make executable and put to $PATH 
 
-#.bashrc#
+### .bashrc
 bash config
-#.zshrc
+### .zshrc
 zsh config
-#monitor.sh
+### monitor.sh
 manage external monitor and position with *rofi*
-#fastpdf.sh
+### fastpdf.sh
 Open pdf anywhere in the home directory with *rofi* (super cool)
 
 
