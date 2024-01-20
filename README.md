@@ -1,4 +1,5 @@
-## useful scripts and utilities for linux, just make executable and put to $PATH 
+## useful scripts and utilities for linux
+### just make executable and put to $PATH 
 
 #.bashrc#
 bash config
