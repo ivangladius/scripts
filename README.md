@@ -8,7 +8,7 @@ zsh config
 # monitor.sh
 manage external monitor and position with *rofi*
 # fastpdf.sh
-Open pdf anywhere in the home directory with *rofi* (super cool)
+Open pdf anywhere in the home directory with *rofi* and *evince* (super cool, chance evince with any pdf manager)
 
 
 
