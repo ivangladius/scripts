@@ -20,11 +20,12 @@ for key in keys:
                                   shell=True,
                                   text=True).split("\n")
     for keybind in keybindings:
-        if keybind is not None:
-            args = keybind.split(" ")
-            if len(args) >= 2:
-                a1, a2 = args[0], args[1]
-                remove_gnome_keybind(a1, a2)
+        if keybind is None:
+            continue
+        args = keybind.split(" ")
+        if len(args) >= 2:
+            a1, a2 = args[0], args[1]
+            remove_gnome_keybind(a1, a2)
 
 
 
