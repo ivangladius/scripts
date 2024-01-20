@@ -1,6 +1,6 @@
 *useful scripts and utilities for linux, just make executable and put to $PATH*
 
-#.bashrc
+#.bashrc#
 bash config
 #.zshrc
 zsh config
