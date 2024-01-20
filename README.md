@@ -1,4 +1,4 @@
-## useful scripts and utilities for linux
+### useful scripts and utilities for linux
 ### just make executable and put to $PATH 
 
 # .bashrc
