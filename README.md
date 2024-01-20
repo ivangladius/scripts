@@ -3,6 +3,11 @@ Use Unix/Linux scripts for fast navigation in the terminal
 
 Some scripts require root permission like fast_mount
 
+*hello*
+wow this is cool
+**helloworld**
+wow this is cool
+***helloworld***
 
 Requires: fzf
 
