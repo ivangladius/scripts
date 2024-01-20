@@ -11,7 +11,7 @@ manage external monitor and position with *rofi*
 Open pdf anywhere in the home directory with *rofi* and *evince* (super cool, chance evince with any pdf viewer)
 # gnome_remove_all_keys.py
 remove all gnome keybinds.
-why? you cannot overrwrite gnome keybindings from the GUI settings menu.
+why? you cannot overrwrite gnome keybindings from the GUI settings menu, thus it blocks your "own" keybindings.
 log in and out after running this script to remove all keys and then you can set your own.
 
 
