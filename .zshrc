@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-setfont ter-132b
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -108,7 +107,8 @@ export PATH="~/.local/bin:$PATH"
 export PATH="~/scripts:$PATH"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
-export PATH="/home/max/.qlot/bin:$PATH"
+export PATH="$HOME/.qlot/bin:$PATH"
+export PATH="$HOME/common-lisp/lem:$PATH"
 
 setxkbmap -option caps:escape
 xset r rate 200 40
@@ -118,7 +118,6 @@ alias ed='emacsclient_open_doom'
 alias ee='emacsclient_open_dired'
 alias ec='emacsclient_open_init'
 
-alias code='flatpak run com.vscodium.codium'
 
 emacsclient_open() {
     emacsclient -nw \
@@ -216,11 +215,13 @@ alias fc='fast_copy'
 
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
+alias vpsconn3='ssh root@128.140.10.7'
 
 alias g='lazygit'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
+export VPS3='128.140.10.7'
 
 # PS1='[\u@\h \W]\$ '
 
@@ -237,4 +238,10 @@ alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
 alias ll='exa -all --icons'
 alias l='exa -l --icons'
+alias sp='. venv/bin/activate'
+alias sd='. venv/bin/deactivate'
 
+
+alias gdb64='aarch64-linux-gnu-gdb'
+alias gcc64='aarch64-linux-gnu-gcc'
+#alias gdb32='aarch64-linux-gnu-gdb'

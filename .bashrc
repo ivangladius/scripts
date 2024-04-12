@@ -1,10 +1,30 @@
+#i User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 #
-# ~/.bashrc
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 
 export PATH="~/.local/bin:$PATH"
@@ -13,8 +33,8 @@ export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/home/max/.qlot/bin:$PATH"
 
-setxkbmap -option caps:escape
-xset r rate 200 40
+#setxkbmap -option caps:escape
+#xset r rate 200 40
 
 alias e='emacsclient_open'
 alias ed='emacsclient_open_doom'
@@ -23,12 +43,40 @@ alias ec='emacsclient_open_init'
 
 alias code='flatpak run com.vscodium.codium'
 
+
 emacsclient_open() {
+    local file_path="$1"
+    
+    # Check if the path is absolute. If not, prepend the current working directory.
+    if [[ "${file_path:0:1}" != "/" ]]; then
+        file_path="$PWD/$file_path"
+    fi
+
     emacsclient -nw \
-		--create-frame \
-		--alternate-editor="" \
-		--eval "(client-persp-new \"$PWD/$1\")"
+                --create-frame \
+                --alternate-editor="" \
+                --eval "(client-persp-new \"$file_path\")"
 }
+
+# emacsclient_open() {
+#     if [[ "${1:0:1}" == "/" ]];then
+# 	PATH="$PWD/$1"
+#     else
+# 	PATH="$1"
+#
+#     emacsclient -nw \
+# 		--create-frame \
+# 		--alternate-editor="" \
+# 		--eval "(client-persp-new \"$PATH\")"
+# }
+
+
+#emacsclient_open() {
+#    emacsclient -nw \
+#		--create-frame \
+#		--alternate-editor="" \
+#		--eval "(client-persp-new \"$PWD/$1\")"
+#}
 
 emacsclient_open_doom() {
     emacsclient -nw \
@@ -62,7 +110,10 @@ alias r='. ranger'
 alias z='zellij'
 
 alias bconf='nvim ~/.bashrc && source ~/.bashrc'
+alias yconf='nvim ~/.zshrc && source ~/.zshrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
+alias iconf='nvim ~/.config/i3/config'
+alias qconf='nvim ~/.config/qtile/config.py'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -122,9 +173,37 @@ alias g='lazygit'
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
+alias xin='sudo xbps-install'
+alias xr='sudo xbps-remove -Rcon'
+alias xl='xbps-query -l'
+alias xf='xl | grep'
+alias xs='xbps-query -Rs'
+alias xd='xbps-query -x'
+alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
+alias ll='exa -all --icons'
+alias l='exa -l --icons'
+
+build_arm_asm() {
+    as $1.s -o $1.o
+    ld $1.o -o $1
+}
+
+alias b='build_arm_asm'
+alias as32='assembly_arm32_asm'
+alias ld32='link_arm32_asm'
+alias objdump32='arm-linux-gnueabihf-objdump'
+
+assembly_arm32_asm() {
+    arm-linux-gnueabihf-as -o $1.o $1.s
+}
+
+link_arm32_asm() {
+    arm-linux-gnueabihf-ld -o $1 $1.o
+}
 
