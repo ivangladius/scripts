@@ -1,0 +1,275 @@
+{
+    "editor.fontFamily": "Hack",
+    "telemetry.telemetryLevel": "off",
+    "editor.codeLens": false,
+
+    "editor.minimap.enabled": false, // removes minimap
+    "editor.renderWhitespace": "none", // removes indent guides
+    "editor.renderLineHighlight": "none", // removes line highlight
+    "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
+    "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
+    "editor.folding": false, // removes the folding feature
+    "editor.occurrencesHighlight": "off", // removes highlights occurrences (still works when you select a word)
+    "editor.matchBrackets": "always", // removes the highlight of matching brackets (I use Subtle Match Brackets extension for this)
+    "editor.glyphMargin": true, // removes the space used mainly for debugging indicators
+    "explorer.openEditors.visible": 0, // removes the activity bar (the 4 icons at the left of the screen), so now you will have to open the explorer, git, debugger and extension with shortcuts or through the Command Palette
+    "workbench.editor.showIcons": true, // removes icon from opened files in tabs
+    "workbench.editor.tabCloseButton": "right", // removes the status bar
+    "indenticator.color.dark": "rgba(255,255,255,.1)", // adds a subtle indent guide (needs Indenticator extension)
+    "workbench.colorCustomizations": {
+      "tab.activeBorder": "#0000",
+      "statusBar.background": "#005f5f",
+      "statusBar.noFolderBackground": "#005f5f",
+      "statusBar.debuggingBackground": "#005f5f",
+      "statusBar.foreground": "#ffffff",
+      "statusBar.debuggingForeground": "#ffffff"
+    },
+    "editor.guides.indentation": true,
+    "cmake.configureOnOpen": true,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "workbench.startupEditor": "none",
+    "editor.inlayHints.enabled": "off",
+    "keyboard.dispatch": "keyCode",
+    "haskell.manageHLS": "PATH",
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    "editor.fontSize": 15,
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ],
+        "editor.semanticHighlighting.enabled": true
+    },
+    
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+      {
+        "before": ["<leader>", "i", "e"],
+        "commands": ["workbench.action.quickOpen"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "i", "r"],
+        "commands": ["workbench.action.openRecent"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "i", "n"],
+        "commands": ["fileutils.newFile"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "i", "N"],
+        "commands": ["fileutils.newFileAtRoot"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "i", "d"],
+        "commands": ["fileutils.newFolder"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "i", "D"],
+        "commands": ["fileutils.newFolderAtRoot"],
+        "silent": true
+      },
+
+      {
+        "before": ["s"],
+        "commands": ["extension.aceJump"]
+      },
+
+      {
+        "before": ["<leader>", "m", "c"],
+        "commands": ["editor.action.blockComment"],
+        "silent": true
+      },
+
+     
+      {
+
+        "before": ["<leader>", "1"],
+        "commands": [":only"],
+        "silent": true
+      },
+
+      {
+
+        "before": ["<leader>", "2"],
+        "commands": ["workbench.action.closeActiveEditor"],
+        "silent": true
+      },
+      {
+
+        "before": ["<leader>", "2"],
+        "commands": ["workbench.action.closeActiveEditor"],
+        "silent": true
+      },
+
+      {
+
+        "before": ["<leader>", "3"],
+        "commands": ["workbench.action.splitEditorDown"],
+        "silent": true
+      },
+
+      {
+
+        "before": ["<leader>", "4"],
+        "commands": ["workbench.action.splitEditorRight"],
+        "silent": true
+      },
+
+      {
+        "before": ["<leader>", "m"],
+        "commands": ["terminal.focus"],
+        "silent": true
+      },
+
+
+      // {
+      //   "before": ["<leader>", "1"],
+      //   "commands": ["workbench.action.openEditorAtIndex1"],
+      //   "silent": true
+      // },
+
+      // {
+      //   "before": ["<leader>", "2"],
+      //   "commands": ["workbench.action.openEditorAtIndex2"],
+      //   "silent": true
+      // },
+
+      // {
+      //   "before": ["<leader>", "3"],
+      //   "commands": ["workbench.action.openEditorAtIndex3"],
+      //   "silent": true
+      // },
+
+      // {
+      //   "before": ["<leader>", "4"],
+      //   "commands": ["workbench.action.openEditorAtIndex4"],
+      //   "silent": true
+      // },
+
+      {
+        "before": ["<leader>", "5"],
+        "commands": ["workbench.action.openEditorAtIndex5"],
+        "silent": true
+      },
+
+      {
+        "before": ["<leader>", "6"],
+        "commands": ["workbench.action.openEditorAtIndex6"],
+        "silent": true
+      },
+
+      {
+        "before": ["<leader>", "7"],
+        "commands": ["workbench.action.openEditorAtIndex7"],
+        "silent": true
+      },
+
+      {
+        "before": ["<leader>", "8"],
+        "commands": ["workbench.action.openEditorAtIndex8"],
+        "silent": true
+      },
+
+
+
+
+
+
+
+
+
+      {
+        "before": ["<leader>", "d", "b"],
+        "commands": ["editor.debug.action.toggleBreakpoint"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "d", "d"],
+        "commands": ["debug.action.openDisassemblyView"],
+        "silent": true
+      },
+
+      {
+        "before": ["<leader>", "d", "D"],
+        "commands": ["debug.action.toggleDisassemblyViewSourceCode"],
+        "silent": true
+      },
+
+
+
+
+      {
+        "before": ["K"],
+        "commands": ["lineBreakInsert"],
+        "silent": true
+      },
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "m", "c"],
+        "commands": ["editor.action.blockComment"],
+        "silent": true
+      },
+    ],
+
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false
+    },
+  
+    // To improve performance"
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+    "debug.console.fontSize": 18,
+    "debug.console.fontFamily": "Hack",
+    "clangd.path": "c:\\Users\\windowx\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\17.0.3\\clangd_17.0.3\\bin\\clangd.exe",
+    "explorer.confirmDelete": false,
+    "workbench.editor.tabActionLocation": "right",
+    "git.openRepositoryInParentFolders": "never",
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "vim.showmodename": false,
+    "zenMode.hideStatusBar": false,
+    "arduino.useArduinoCli": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.settings.applyToAllProfiles": [
+      "editor.fontFamily"
+    ],
+    "editor.inlayHints.fontFamily": "Hack",
+    "editor.inlayHints.fontSize": 13
+}

@@ -186,8 +186,8 @@ alias xf='xl | grep'
 alias xs='xbps-query -Rs'
 alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
-alias ll='exa -all --icons'
-alias l='exa -l --icons'
+#alias ll='exa -all --icons'
+#alias l='exa -l --icons'
 
 build_arm_asm() {
     as $1.s -o $1.o
