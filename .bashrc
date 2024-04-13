@@ -33,15 +33,15 @@ export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/home/max/.qlot/bin:$PATH"
 
-#setxkbmap -option caps:escape
-#xset r rate 200 40
+setxkbmap -option caps:escape
+xset r rate 200 40
 
 alias e='emacsclient_open'
 alias ed='emacsclient_open_doom'
 alias ee='emacsclient_open_dired'
 alias ec='emacsclient_open_init'
 
-alias code='flatpak run com.vscodium.codium'
+#alias code='flatpak run com.vscodium.codium'
 
 
 emacsclient_open() {
@@ -100,10 +100,10 @@ alias l='ls --color=auto'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias vim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
 alias vs='sudo nvim $(sudo find / -type f | fzf)'
+#alias vim='nvim'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
@@ -168,7 +168,7 @@ alias fc='fast_copy'
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
 
-alias g='lazygit'
+#alias g='lazygit'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
@@ -206,4 +206,17 @@ assembly_arm32_asm() {
 link_arm32_asm() {
     arm-linux-gnueabihf-ld -o $1 $1.o
 }
+#
+# docker_arch_devtool() {
+# 	TOOL="$1"
+# 	MOUNT_PATH="$2"
+# 	if [[ -n $MOUNT_PATH && -n $TOOL ]];then
+# 	    ABS_PATH=$(realpath $MOUNT_PATH)
+# 	    docker run -it --rm -v $ABS_PATH:$ABS_PATH -w $(realpath .) -u "$(id -u):$(id -g)" -e HOME=/ABSarch-devtools $TOOL
+# 	else
+# 	    echo "tool name or path is missing!"
+# 	fi
+# }
 
+alias vim='devtools nvim'
+alias g='devtools lazygit'
