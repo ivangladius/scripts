@@ -103,12 +103,13 @@ alias l='ls --color=auto'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
 alias vs='sudo nvim $(sudo find / -type f | fzf)'
-#alias vim='nvim'
+alias vim='nvim'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
+alias pconf='nvim ~/scripts/fastpdf.sh'
 alias bconf='nvim ~/.bashrc && source ~/.bashrc'
 alias yconf='nvim ~/.zshrc && source ~/.zshrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
@@ -168,7 +169,7 @@ alias fc='fast_copy'
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
 
-#alias g='lazygit'
+alias g='lazygit'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
@@ -189,15 +190,24 @@ alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
 #alias ll='exa -all --icons'
 #alias l='exa -l --icons'
 
+alias mgdb='gdb-multiarch'
+
+# AARCH64 
+alias armld64='aarch64-linux-gnu-ld'
+alias armas64='aarch64-linux-gnu-as'
+alias armgcc64='aarch64-linux-gnu-gcc'
+alias qarm64='qemu-aarch64 -L /usr/aarch64-linux-gnu/ '
+
+#ARM32
+alias armld32='arm-linux-gnueabihf-ld'
+alias armas32='arm-linux-gnueabihf-as'
+alias armgcc32='arm-linux-gnueabihf-gcc'
+alias qarm32='qemu-arm -L /usr/arm-linux-gnueabihf'
 build_arm_asm() {
     as $1.s -o $1.o
     ld $1.o -o $1
 }
 
-alias b='build_arm_asm'
-alias as32='assembly_arm32_asm'
-alias ld32='link_arm32_asm'
-alias objdump32='arm-linux-gnueabihf-objdump'
 
 assembly_arm32_asm() {
     arm-linux-gnueabihf-as -o $1.o $1.s
@@ -218,5 +228,77 @@ link_arm32_asm() {
 # 	fi
 # }
 
-alias vim='devtools nvim'
-alias g='devtools lazygit'
+#alias vim='devtools nvim'
+#alias g='devtools lazygit'
+. "$HOME/.cargo/env"
+
+
+alias ma='. venv/bin/activate'
+alias md='deactivate'
+
+alias vpsconn='ssh root@181.215.69.116'
+alias vpsconn2='ssh root@152.53.16.238'
+alias vpsconn3='ssh root@128.140.10.7'
+
+export VPS='181.215.69.116'
+export VPS2='152.53.16.238'
+export VPS3='128.140.10.7'
+
+# generate_golang_script() {
+#     set -x
+#
+#     SCRIPT_FILE_CONTENT="
+#     package main
+#
+#     import (
+# 	    "fmt"
+# 	    "github.com/bitfield/script"
+#     )
+#
+#     func main() {
+#     }"
+#
+#     SCRIPT_DIR="$1"
+#     mkdir "$SCRIPT_DIR"
+#     touch "$SCRIPT_DIR/main.go"
+#     echo "$SCRIPT_FILE_CONTENT" > "$SCRIPT_FILE_CONTENT"/main.go
+#     cd "$SCRIPT_DIR"
+#     go mod init "$SCRIPT_DIR"
+#     go get -v github.com/bitfield/script
+#     cd ..
+#     echo "done"
+#
+# }
+#
+
+generate_golang_script() {
+    set -x
+
+    SCRIPT_DIR="$1"
+    mkdir -p "$SCRIPT_DIR"
+    touch "$SCRIPT_DIR/main.go"
+
+    # Use 'cat' to correctly handle multi-line string with proper escaping of internal quotes
+    cat <<EOF > "$SCRIPT_DIR/main.go"
+package main
+
+import (
+    "fmt"
+    "github.com/bitfield/script"
+)
+
+func main() {
+    fmt.Println("Hello, script!")
+}
+EOF
+
+    # Navigate to the script directory
+    cd "$SCRIPT_DIR"
+
+    # Initialize go module, here assuming SCRIPT_DIR is also the module name
+    go mod init $(basename "$SCRIPT_DIR")
+    go get -v github.com/bitfield/script
+
+    cd ..
+    echo "done"
+}
