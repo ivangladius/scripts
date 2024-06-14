@@ -144,6 +144,7 @@ alias ls='ls --color=auto'
 alias ll='ls -all --color=auto'
 alias la='ls -a --color=auto'
 alias l='ls --color=auto'
+alias ssh='TERM=xterm-256color ssh'
 
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
@@ -215,13 +216,16 @@ alias fc='fast_copy'
 
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
-alias vpsconn3='ssh root@128.140.10.7'
+alias vpsconn3='ssh max@128.140.10.7'
+alias vpsconn4='ssh root@185.198.234.13'
+alias vpsconn4user='ssh alien@185.198.234.13'
 
 alias g='lazygit'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
 export VPS3='128.140.10.7'
+export VPS4='185.198.234.13'
 
 # PS1='[\u@\h \W]\$ '
 
@@ -236,8 +240,8 @@ alias xf='xl | grep'
 alias xs='xbps-query -Rs'
 alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
-alias ll='exa -all --icons'
-alias l='exa -l --icons'
+#alias ll='exa -all --icons'
+#alias l='exa -l --icons'
 alias sp='. venv/bin/activate'
 alias sd='. venv/bin/deactivate'
 
