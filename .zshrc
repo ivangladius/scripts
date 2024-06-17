@@ -109,6 +109,7 @@ export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.qlot/bin:$PATH"
 export PATH="$HOME/common-lisp/lem:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 setxkbmap -option caps:escape
 xset r rate 200 40
@@ -149,7 +150,8 @@ alias ssh='TERM=xterm-256color ssh'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias vim='nvim'
+alias vim='hx'
+alias nvim='hx'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
 alias vs='sudo nvim $(sudo find / -type f | fzf)'
@@ -158,6 +160,8 @@ alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
+alias hconf='nvim ~/.config/helix/config.toml'
+alias zconf='nvim ~/.zshrc && source ~/.zshrc'
 alias bconf='nvim ~/.bashrc && source ~/.bashrc'
 alias yconf='nvim ~/.zshrc && source ~/.zshrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
@@ -240,8 +244,8 @@ alias xf='xl | grep'
 alias xs='xbps-query -Rs'
 alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
-#alias ll='exa -all --icons'
-#alias l='exa -l --icons'
+alias ll='exa -all --icons'
+alias l='exa -l --icons'
 alias sp='. venv/bin/activate'
 alias sd='. venv/bin/deactivate'
 
@@ -249,3 +253,9 @@ alias sd='. venv/bin/deactivate'
 alias gdb64='aarch64-linux-gnu-gdb'
 alias gcc64='aarch64-linux-gnu-gcc'
 #alias gdb32='aarch64-linux-gnu-gdb'
+
+export IDF_PATH='~/micro/sdk/ESP8266_RTOS_SDK'
+export PATH="$PATH:$HOME/micro/xtensa-lx106-elf/bin"
+
+source /home/max/.compgen.sh
+
