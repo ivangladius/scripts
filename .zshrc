@@ -246,8 +246,8 @@ alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
 alias ll='exa -all --icons'
 alias l='exa -l --icons'
-alias sp='. venv/bin/activate'
-alias sd='. venv/bin/deactivate'
+alias va='. venv/bin/activate'
+alias vd='deactivate'
 
 
 alias gdb64='aarch64-linux-gnu-gdb'
@@ -257,5 +257,7 @@ alias gcc64='aarch64-linux-gnu-gcc'
 export IDF_PATH='~/micro/sdk/ESP8266_RTOS_SDK'
 export PATH="$PATH:$HOME/micro/xtensa-lx106-elf/bin"
 
-source /home/max/.compgen.sh
+alias stconf='(cd ~/programs/st/ && hx config.h && sudo make install)'
+alias proj='cd ~/projects/ && hx .'
 
+alias code='flatpak run com.vscodium.codium'
