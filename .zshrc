@@ -261,3 +261,7 @@ alias stconf='(cd ~/programs/st/ && hx config.h && sudo make install)'
 alias proj='cd ~/projects/ && hx .'
 
 alias code='flatpak run com.vscodium.codium'
+
+build_sbcl() {
+  sbcl --load $1 --eval "(sb-ext:save-lisp-and-die \"$2\" :toplevel #'$3 :executable t)"
+}
