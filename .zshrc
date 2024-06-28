@@ -223,6 +223,7 @@ alias vpsconn2='ssh root@152.53.16.238'
 alias vpsconn3='ssh max@128.140.10.7'
 alias vpsconn4='ssh root@185.198.234.13'
 alias vpsconn4user='ssh alien@185.198.234.13'
+alias pi='ssh pi@192.168.178.82'
 
 alias g='lazygit'
 
@@ -230,6 +231,7 @@ export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
 export VPS3='128.140.10.7'
 export VPS4='185.198.234.13'
+export PI='pi@192.168.178.82'
 
 # PS1='[\u@\h \W]\$ '
 
