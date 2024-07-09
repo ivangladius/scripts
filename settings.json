@@ -1,8 +1,8 @@
 {
-    "editor.fontFamily": "Hack",
+    "editor.fontFamily": "JetBrains Mono",
     "telemetry.telemetryLevel": "off",
     "editor.codeLens": false,
-
+    "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false, // removes minimap
     "editor.renderWhitespace": "none", // removes indent guides
     "editor.renderLineHighlight": "none", // removes line highlight
@@ -271,5 +271,7 @@
       "editor.fontFamily"
     ],
     "editor.inlayHints.fontFamily": "Hack",
-    "editor.inlayHints.fontSize": 13
+    "editor.inlayHints.fontSize": 13,
+    "workbench.colorTheme": "Gruvbox Material Light",
+    "workbench.activityBar.location": "hidden"
 }

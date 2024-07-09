@@ -150,8 +150,8 @@ alias ssh='TERM=xterm-256color ssh'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias vim='hx'
-alias nvim='hx'
+alias vim='helix'
+alias nvim='helix'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
 alias vs='sudo nvim $(sudo find / -type f | fzf)'
@@ -259,11 +259,13 @@ alias gcc64='aarch64-linux-gnu-gcc'
 export IDF_PATH='~/micro/sdk/ESP8266_RTOS_SDK'
 export PATH="$PATH:$HOME/micro/xtensa-lx106-elf/bin"
 
-alias stconf='(cd ~/programs/st/ && hx config.h && sudo make install)'
-alias proj='cd ~/projects/ && hx .'
+alias stconf='(cd ~/programs/st/ && helix config.h && sudo make install)'
+alias proj='cd ~/projects/ && helix .'
 
 alias code='flatpak run com.vscodium.codium'
 
 build_sbcl() {
   sbcl --load $1 --eval "(sb-ext:save-lisp-and-die \"$2\" :toplevel #'$3 :executable t)"
 }
+
+source <(fzf --zsh)

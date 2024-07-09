@@ -902,5 +902,9 @@
     {
         "key": "ctrl+k ctrl+pagedown",
         "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.focusNextGroup"
     }
 ]
