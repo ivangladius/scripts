@@ -150,8 +150,10 @@ alias ssh='TERM=xterm-256color ssh'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias vim='helix'
-alias nvim='helix'
+#alias vim='helix'
+#alias nvim='helix'
+alias vim='nvim'
+alias nvim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
 alias vs='sudo nvim $(sudo find / -type f | fzf)'

@@ -272,6 +272,5 @@
     ],
     "editor.inlayHints.fontFamily": "Hack",
     "editor.inlayHints.fontSize": 13,
-    "workbench.colorTheme": "Gruvbox Material Light",
-    "workbench.activityBar.location": "hidden"
+    "workbench.colorTheme": "Gruvbox Material Light"
 }
