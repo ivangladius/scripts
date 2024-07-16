@@ -110,6 +110,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.qlot/bin:$PATH"
 export PATH="$HOME/common-lisp/lem:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/home/alien/programs/graalvm/graalvm-jdk-17.0.11+7.1/bin:$PATH"
 
 setxkbmap -option caps:escape
 xset r rate 200 40
@@ -169,6 +170,7 @@ alias yconf='nvim ~/.zshrc && source ~/.zshrc'
 alias nconf='nvim ~/.config/nvim/init.lua'
 alias iconf='nvim ~/.config/i3/config'
 alias qconf='nvim ~/.config/qtile/config.py'
+alias sconf='(cd ~/programs/st/ && nvim config.h && sudo make install)'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -271,3 +273,4 @@ build_sbcl() {
 }
 
 source <(fzf --zsh)
+source /home/alien/.compgen.sh
