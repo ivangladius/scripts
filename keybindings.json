@@ -896,15 +896,64 @@
         "command": "workbench.action.closePanel"
     },
     {
-        "key": "alt+a",
-        "command": "grep.git"
-    },
-    {
         "key": "ctrl+k ctrl+pagedown",
         "command": "-workbench.action.nextEditorInGroup"
     },
     {
         "key": "alt+o",
         "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "alt+n",
+        "command": "bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+i",
+        "command": "bookmarks.listFromAllFiles"
+    },
+    {
+        "key": "alt+`",
+        "command": "extension.vim_ctrl+o",
+        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+    },
+    {
+        "key": "alt+w",
+        "command": "extension.searchCTags",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.searchCTags",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "bookmarks.toggleLabeled"
+    },
+    {
+        "key": "alt+;",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
     }
 ]

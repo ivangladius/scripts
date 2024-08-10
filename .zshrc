@@ -68,7 +68,7 @@ ZSH_THEME="josh"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# lsmple format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
@@ -96,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# lsmple aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
@@ -105,8 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="~/.local/bin:$PATH"
 export PATH="~/scripts:$PATH"
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
+#export GOPATH=$HOME/go
+#export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.qlot/bin:$PATH"
 export PATH="$HOME/common-lisp/lem:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -152,25 +152,25 @@ alias ssh='TERM=xterm-256color ssh'
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
 #alias vim='helix'
-#alias nvim='helix'
-alias vim='nvim'
-alias nvim='nvim'
-alias v='nvim $(find ~ -type f | fzf)'
-alias vv='nvim $(find . -type f | fzf)'
-alias vs='sudo nvim $(sudo find / -type f | fzf)'
+#alias hx='helix'
+alias vim='hx'
+alias hx='hx'
+alias v='hx $(find ~ -type f | fzf)'
+alias vv='hx $(find . -type f | fzf)'
+alias vs='sudo hx $(sudo find / -type f | fzf)'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
-alias hconf='nvim ~/.config/helix/config.toml'
-alias zconf='nvim ~/.zshrc && source ~/.zshrc'
-alias bconf='nvim ~/.bashrc && source ~/.bashrc'
-alias yconf='nvim ~/.zshrc && source ~/.zshrc'
-alias nconf='nvim ~/.config/nvim/init.lua'
-alias iconf='nvim ~/.config/i3/config'
-alias qconf='nvim ~/.config/qtile/config.py'
-alias sconf='(cd ~/programs/st/ && nvim config.h && sudo make install)'
+alias hconf='hx ~/.config/helix/config.toml'
+alias zconf='hx ~/.zshrc && source ~/.zshrc'
+alias bconf='hx ~/.bashrc && source ~/.bashrc'
+alias yconf='hx ~/.zshrc && source ~/.zshrc'
+alias nconf='hx ~/.config/hx/init.lua'
+alias iconf='hx ~/.config/i3/config'
+alias qconf='hx ~/.config/qtile/config.py'
+alias sconf='(cd ~/programs/st/ && hx config.h && sudo make install)'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -181,7 +181,7 @@ alias c='cd $(find ~/ -type d | fzf) && ls'
 
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
-    nvim $(grep -rni $1 | fzf)
+    hx $(grep -rni $1 | fzf)
 }
 
 # alias vf='grep_vim'
@@ -239,8 +239,8 @@ export PI='pi@192.168.178.82'
 
 # PS1='[\u@\h \W]\$ '
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='hx'
+export VISUAL='hx'
 
 alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
 alias xin='sudo xbps-install'
@@ -250,8 +250,8 @@ alias xf='xl | grep'
 alias xs='xbps-query -Rs'
 alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
-alias ll='exa -all --icons'
-alias l='exa -l --icons'
+#alias ll='ls -all --icons'
+alias l='ls -l --icons'
 alias va='. venv/bin/activate'
 alias vd='deactivate'
 
@@ -266,11 +266,35 @@ export PATH="$PATH:$HOME/micro/xtensa-lx106-elf/bin"
 alias stconf='(cd ~/programs/st/ && helix config.h && sudo make install)'
 alias proj='cd ~/projects/ && helix .'
 
-alias code='flatpak run com.vscodium.codium'
+#alias code='flatpak run com.vscodium.codium'
 
 build_sbcl() {
   sbcl --load $1 --eval "(sb-ext:save-lisp-and-die \"$2\" :toplevel #'$3 :executable t)"
 }
 
-source <(fzf --zsh)
-source /home/alien/.compgen.sh
+#source <(fzf --zsh)
+#source /home/alien/.compgen.sh
+alias acode="cursor"
+
+#alias ros1="source /opt/ros/noetic/setup.zsh"
+alias qmake='/home/ubuntu/libs/Qt5.12.3/5.12.3/gcc_64/bin/qmake'
+
+# Function to source ROS1 and change the prompt
+# Function to source ROS1 and change the prompt
+ros1() {
+    source /opt/ros/noetic/setup.zsh
+    export PS1="%{$fg[green]%}[ros1]%{$reset_color%} %n@%m:%~\$ "
+}
+
+# Function to source ROS2 and change the prompt
+ros2() {
+    source /opt/ros/foxy/setup.zsh
+    export PS1="%{$fg[red]%}[ros2]%{$reset_color%} %n@%m:%~\$ "
+}
+
+alias mgf2='gf2 -ex "break main" -ex "run"'
+alias wpi='ssh berry@192.168.2.15'
+WPI='192.168.2.15'
+alias xcp='xclip -selection clipboard'
+alias p='cd $(find ~/projects/ -maxdepth 1 -type d | fzf) && acode . &'
+export PATH=$PATH:/usr/local/go/bin
