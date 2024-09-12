@@ -142,35 +142,35 @@ emacsclient_open_init() {
     emacsclient_open "~/.emacs.d/init.el"
 }
 
-alias ls='ls --color=auto'
-alias ll='ls -all --color=auto'
-alias la='ls -a --color=auto'
-alias l='ls --color=auto'
+alias ls='exa --color=auto'
+alias ll='exa -all --icons --color=auto'
+alias la='exa -a --color=auto'
+alias l='exa --color=auto'
 alias ssh='TERM=xterm-256color ssh'
 
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
 #alias vim='helix'
-#alias hx='helix'
-alias vim='hx'
-alias hx='hx'
-alias v='hx $(find ~ -type f | fzf)'
-alias vv='hx $(find . -type f | fzf)'
-alias vs='sudo hx $(sudo find / -type f | fzf)'
+#alias nvim='helix'
+alias vim='nvim'
+alias nvim='nvim'
+alias v='nvim $(find ~ -type f | fzf)'
+alias vv='nvim $(find . -type f | fzf)'
+alias vs='sudo nvim $(sudo find / -type f | fzf)'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
-alias hconf='hx ~/.config/helix/config.toml'
-alias zconf='hx ~/.zshrc && source ~/.zshrc'
-alias bconf='hx ~/.bashrc && source ~/.bashrc'
-alias yconf='hx ~/.zshrc && source ~/.zshrc'
-alias nconf='hx ~/.config/hx/init.lua'
-alias iconf='hx ~/.config/i3/config'
-alias qconf='hx ~/.config/qtile/config.py'
-alias sconf='(cd ~/programs/st/ && hx config.h && sudo make install)'
+alias hconf='nvim ~/.config/helix/config.toml'
+alias zconf='nvim ~/.zshrc && source ~/.zshrc'
+alias bconf='nvim ~/.bashrc && source ~/.bashrc'
+alias yconf='nvim ~/.zshrc && source ~/.zshrc'
+alias nconf='nvim ~/.config/nvim/init.lua'
+alias iconf='nvim ~/.config/i3/config'
+alias qconf='nvim ~/.config/qtile/config.py'
+alias sconf='(cd ~/programs/st/ && nvim config.h && sudo make install)'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -181,7 +181,7 @@ alias c='cd $(find ~/ -type d | fzf) && ls'
 
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
-    hx $(grep -rni $1 | fzf)
+    nvim $(grep -rni $1 | fzf)
 }
 
 # alias vf='grep_vim'
@@ -239,8 +239,8 @@ export PI='pi@192.168.178.82'
 
 # PS1='[\u@\h \W]\$ '
 
-export EDITOR='hx'
-export VISUAL='hx'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
 alias xin='sudo xbps-install'
@@ -250,7 +250,7 @@ alias xf='xl | grep'
 alias xs='xbps-query -Rs'
 alias xd='xbps-query -x'
 alias clrk='sudo vkpurge rm all && sudo rm -rf /var/cache/xbps/*'
-#alias ll='ls -all --icons'
+#alias ll='exa -all --icons --icons'
 alias l='ls -l --icons'
 alias va='. venv/bin/activate'
 alias vd='deactivate'
@@ -274,7 +274,7 @@ build_sbcl() {
 
 #source <(fzf --zsh)
 #source /home/alien/.compgen.sh
-alias acode="cursor"
+alias acode="cursor . --no-sandbox &"
 
 #alias ros1="source /opt/ros/noetic/setup.zsh"
 alias qmake='/home/ubuntu/libs/Qt5.12.3/5.12.3/gcc_64/bin/qmake'
@@ -298,3 +298,5 @@ WPI='192.168.2.15'
 alias xcp='xclip -selection clipboard'
 alias p='cd $(find ~/projects/ -maxdepth 1 -type d | fzf) && acode . &'
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin:$PATH
+export PATH=$PATH:/home/max/.cargo/bin
