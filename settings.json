@@ -261,7 +261,7 @@
     },
     "debug.console.fontSize": 18,
     "debug.console.fontFamily": "JetBrains Mono",
-    "clangd.path": "/home/asdf/.config/Cursor/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
+    "clangd.path": "/home/max/.config/Cursor/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
     "explorer.confirmDelete": false,
     "workbench.editor.tabActionLocation": "right",
     "git.openRepositoryInParentFolders": "never",
@@ -286,7 +286,7 @@
       "workbench.action.tasks.runTask"
     ],
     "docker.containers.label": "Compose Project Name",
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "GitHub Dark",
     "makefile.configureOnOpen": true,
     "EIDE.Repository.UseProxy": false
 }

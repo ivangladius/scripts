@@ -230,6 +230,7 @@ alias vpsconn4user='ssh alien@185.198.234.13'
 alias pi='ssh pi@192.168.178.82'
 
 alias g='lazygit'
+alias da='lazydocker'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
@@ -300,3 +301,8 @@ alias p='cd $(find ~/projects/ -maxdepth 1 -type d | fzf) && acode . &'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin:$PATH
 export PATH=$PATH:/home/max/.cargo/bin
+
+export BINANCE_API_KEY="aDZ5v1HPi4d5DlAGRspcnx4VuKFnEZkBDq0I33tNZ4hvEVAndnIs1dSnAVG8UJ50"
+export BINANCE_SECRET_KEY="HjTrSXZvgFYAJK1R2t1MlftNNekXgYGS2KgMeuKMXIpQ3Oz6JFCqfsiGYpeF17AY"
+export BINANCE_TESTNET_API_KEY="FuNFjmw59elp0GV8zpx0M8FYtiyjq9bmP6sZ1dLnTveK0WyaQz3DX0JJ394n4zpH"
+export BINANCE_TESTNET_SECRET_KEY="iwfYh31X4AvwggnLr4t3MIGPNzK69pymFtje2evie55NKtnCxrojTPYkeTJTt2lo"

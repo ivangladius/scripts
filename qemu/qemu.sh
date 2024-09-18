@@ -4,25 +4,25 @@ set -e -o pipefail
 
 RAM=256M
 
-if ! which qemu-system-mipsel >/dev/null \
-|| ! which qemu-system-ppc >/dev/null \
-|| ! which qemu-system-arm >/dev/null \
-|| ! which qemu-system-i386 >/dev/null \
-|| ! which qemu-system-x86_64 >/dev/null
-then
- if "$(uname -s)" = "Darwin"
- then
-  echo "brew install qemu"
-  brew install qemu
- elif "$(uname -s)" = "Linux"
- then
-  echo "sudo apt-get install qemu qemu-system"
-  sudo apt-get install qemu qemu-system
- else
-  echo "Error: please install qemu" >&2
-  exit 1
- fi
-fi
+##if ! which qemu-system-mipsel >/dev/null \
+##|| ! which qemu-system-ppc >/dev/null \
+##|| ! which qemu-system-arm >/dev/null \
+##|| ! which qemu-system-i386 >/dev/null \
+##|| ! which qemu-system-x86_64 >/dev/null
+##then
+## if "$(uname -s)" = "Darwin"
+## then
+##  echo "brew install qemu"
+##  brew install qemu
+## elif "$(uname -s)" = "Linux"
+## then
+##  echo "sudo apt-get install qemu qemu-system"
+##  sudo apt-get install qemu qemu-system
+## else
+##  echo "Error: please install qemu" >&2
+##  exit 1
+## fi
+##fi
 
 function notes {
  echo "Notes:"
