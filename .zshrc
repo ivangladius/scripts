@@ -276,7 +276,7 @@ build_sbcl() {
 
 #source <(fzf --zsh)
 #source /home/alien/.compgen.sh
-alias acode="cursor . --no-sandbox &"
+alias acode="cursor . --no-sandbox 2>/dev/null &"
 
 #alias ros1="source /opt/ros/noetic/setup.zsh"
 alias qmake='/home/ubuntu/libs/Qt5.12.3/5.12.3/gcc_64/bin/qmake'
