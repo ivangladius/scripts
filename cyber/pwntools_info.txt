@@ -1,0 +1,4 @@
+sudo tee /etc/sysctl.d/10-ptrace.conf <<EOF
+kernel.yama.ptrace_scope = 0
+EOF
+

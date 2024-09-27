@@ -111,6 +111,7 @@ export PATH="$HOME/.qlot/bin:$PATH"
 export PATH="$HOME/common-lisp/lem:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/alien/programs/graalvm/graalvm-jdk-17.0.11+7.1/bin:$PATH"
+export PATH="/home/max/flutter/flutter/bin:$PATH"
 
 setxkbmap -option caps:escape
 xset r rate 200 40
@@ -302,7 +303,10 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin:$PATH
 export PATH=$PATH:/home/max/.cargo/bin
 
-export BINANCE_API_KEY="aDZ5v1HPi4d5DlAGRspcnx4VuKFnEZkBDq0I33tNZ4hvEVAndnIs1dSnAVG8UJ50"
-export BINANCE_SECRET_KEY="HjTrSXZvgFYAJK1R2t1MlftNNekXgYGS2KgMeuKMXIpQ3Oz6JFCqfsiGYpeF17AY"
 export BINANCE_TESTNET_API_KEY="FuNFjmw59elp0GV8zpx0M8FYtiyjq9bmP6sZ1dLnTveK0WyaQz3DX0JJ394n4zpH"
 export BINANCE_TESTNET_SECRET_KEY="iwfYh31X4AvwggnLr4t3MIGPNzK69pymFtje2evie55NKtnCxrojTPYkeTJTt2lo"
+export CHROME_EXECUTABLE=/snap/bin/chromium
+export PATH="$PATH:$HOME/.pub-cache/bin"
+#needed to remove zoom when pressing alt + mousewheel:up/down for vscode to
+#scroll faster and bind it there
+xfconf-query -c xfwm4 -p /general/zoom_desktop -s false

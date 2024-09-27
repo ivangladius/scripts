@@ -1,7 +1,24 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-
-
+    {
+        "key": "alt+e", // Or any other key combination you prefer
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                {
+                    "command": "vim.remap",
+                    "args": {
+                        "after": [
+                            "g",
+                            "d",
+                            "z",
+                            "z"
+                        ]
+                    }
+                }
+            ]
+        }
+    },
     {
     "key": "alt+o",
     "command": "workbench.action.navigateRight",
@@ -965,5 +982,48 @@
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
-    }
+    },
+    {
+        "key": "shift+alt+i",
+        "command": "composer.startComposerPrompt",
+        "when": "composerIsEnabled"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-composer.startComposerPrompt",
+        "when": "composerIsEnabled"
+    },
+    {
+        "key": "alt+q",
+        "command": "workbench.action.navigateBack",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "workbench.action.navigateForward",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+   {
+    "key": "alt+wheel:down",
+    "command": "cursorMove",
+    "args": {
+        "to": "down",
+        "by": "page"
+    },
+    "when": "editorTextFocus"
+},
+{
+    "key": "alt+wheel:up",
+    "command": "cursorMove",
+    "args": {
+        "to": "up",
+        "by": "page"
+    },
+    "when": "editorTextFocus"
+},
 ]
