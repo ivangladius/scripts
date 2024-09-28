@@ -289,5 +289,15 @@
     "makefile.configureOnOpen": true,
     "EIDE.Repository.UseProxy": false,
     "dart.flutterSdkPath": "/home/max/flutter/flutter",
-    "workbench.colorTheme": "Default Dark Modern"
+    "workbench.colorTheme": "Default Dark Modern",
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+        80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": "off"
+    }
 }

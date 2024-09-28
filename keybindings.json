@@ -1,6 +1,14 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
+        "key": "escape",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl",
+        "args": {
+            "count": 2
+        }
+    },
+    {
         "key": "alt+e", // Or any other key combination you prefer
         "command": "extension.multiCommand.execute",
         "args": {
@@ -1025,5 +1033,14 @@
         "by": "page"
     },
     "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+b",
+    "command": "workbench.panel.aichat.view.toggleVisibility"
+},
+{
+    "key": "ctrl+b",
+    "command": "-extension.vim_ctrl+b",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
 },
 ]
