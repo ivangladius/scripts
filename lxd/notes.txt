@@ -1,0 +1,14 @@
+
+install:
+---------
+sudo lxd init
+sudo lxc launch ubuntu:20.04 ros-container
+export DISPLAY=:0
+xhost +local:docker
+lxc config device add ros-container X0 disk source=/tmp/.X11-unix path=/tmp/.X11-unix
+sudo lxc exec ros-container -- bash
+
+in the container: 
+--------------
+sudo apt update
+sudo apt install x11-apps xauth
