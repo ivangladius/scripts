@@ -1,7 +1,7 @@
 {
     "editor.fontFamily": "JetBrains Mono",
     "telemetry.telemetryLevel": "off",
-    "editor.codeLens": false,
+    "editor.codeLens": true,
     "editor.minimap.enabled": true, // removes minimap
     "editor.renderWhitespace": "none", // removes indent guides
     "editor.renderLineHighlight": "none", // removes line highlight
@@ -27,7 +27,7 @@
     "cmake.configureOnOpen": true,
     "C_Cpp.intelliSenseEngine": "disabled",
     "workbench.startupEditor": "none",
-    "editor.inlayHints.enabled": "off",
+    "editor.inlayHints.enabled": "on",
     "keyboard.dispatch": "keyCode",
     "haskell.manageHLS": "PATH",
     "terminal.integrated.smoothScrolling": true,
@@ -299,5 +299,12 @@
       "editor.selectionHighlight": false,
       "editor.tabCompletion": "onlySnippets",
       "editor.wordBasedSuggestions": "off"
-    }
+    },
+    "calva.prettyPrintingOptions": {
+      "printEngine": "pprint",
+      "enabled": false,
+      "width": 120,
+      "maxLength": 50
+    },
+    "git.autofetch": true
 }
