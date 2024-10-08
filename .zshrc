@@ -229,6 +229,7 @@ alias vpsconn3='ssh max@128.140.10.7'
 alias vpsconn4='ssh root@185.198.234.13'
 alias vpsconn4user='ssh alien@185.198.234.13'
 alias pi='ssh pi@192.168.178.82'
+alias sv1='ssh rambo@10.100.8.145'
 
 alias g='lazygit'
 alias da='lazydocker'
@@ -237,7 +238,8 @@ export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
 export VPS3='128.140.10.7'
 export VPS4='185.198.234.13'
-export PI='pi@192.168.178.82'
+export PI='192.168.178.82'
+export SV1='10.100.8.145'
 
 # PS1='[\u@\h \W]\$ '
 
@@ -262,8 +264,8 @@ alias gdb64='aarch64-linux-gnu-gdb'
 alias gcc64='aarch64-linux-gnu-gcc'
 #alias gdb32='aarch64-linux-gnu-gdb'
 
-export IDF_PATH='~/micro/sdk/ESP8266_RTOS_SDK'
-export PATH="$PATH:$HOME/micro/xtensa-lx106-elf/bin"
+export IDF_PATH='~/micros/esp8266/ESP8266_RTOS_SDK'
+export PATH="$HOME/micros/esp8266/xtensa-lx106-elf/bin:$PATH"
 
 alias stconf='(cd ~/programs/st/ && helix config.h && sudo make install)'
 alias proj='cd ~/projects/ && helix .'
@@ -276,7 +278,7 @@ build_sbcl() {
 
 #source <(fzf --zsh)
 #source /home/alien/.compgen.sh
-alias acode="cursor . --no-sandbox 2>/dev/null &"
+alias acode="cursor . --no-sandbox &>/dev/null &"
 
 #alias ros1="source /opt/ros/noetic/setup.zsh"
 alias qmake='/home/ubuntu/libs/Qt5.12.3/5.12.3/gcc_64/bin/qmake'
@@ -310,3 +312,5 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 #needed to remove zoom when pressing alt + mousewheel:up/down for vscode to
 #scroll faster and bind it there
 xfconf-query -c xfwm4 -p /general/zoom_desktop -s false
+
+alias bsd1='ssh rambo@10.0.0.2'
