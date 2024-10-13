@@ -311,6 +311,6 @@ export CHROME_EXECUTABLE=/snap/bin/chromium
 export PATH="$PATH:$HOME/.pub-cache/bin"
 #needed to remove zoom when pressing alt + mousewheel:up/down for vscode to
 #scroll faster and bind it there
-xfconf-query -c xfwm4 -p /general/zoom_desktop -s false
+#xfconf-query -c xfwm4 -p /general/zoom_desktop -s false
 
 alias bsd1='ssh rambo@10.0.0.2'
