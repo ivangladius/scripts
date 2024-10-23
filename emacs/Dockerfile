@@ -8,20 +8,20 @@ RUN pacman -Syu --noconfirm && \
     git \
     base-devel \
     gcc \
+    zsh \
+    wget \
+    curl \
+    git \
     xorg-server-xvfb
 
-# Create a default user
 RUN useradd -m dockeruser
-
-# Set environment variable
 ENV HOME=/home/hostuser
-
-# Set working directory
 WORKDIR /home/hostuser
 
-# Switch to non-root user
+RUN /bin/bash -c "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && \
+                    yes | ~/.config/emacs/bin/doom install"  
+
 USER dockeruser
 
-# Set Emacs as the default command
 CMD ["emacs"]
 
