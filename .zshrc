@@ -285,16 +285,16 @@ alias qmake='/home/ubuntu/libs/Qt5.12.3/5.12.3/gcc_64/bin/qmake'
 
 # Function to source ROS1 and change the prompt
 # Function to source ROS1 and change the prompt
-ros1() {
-    source /opt/ros/noetic/setup.zsh
-    export PS1="%{$fg[green]%}[ros1]%{$reset_color%} %n@%m:%~\$ "
-}
+# ros1() {
+#     source /opt/ros/noetic/setup.zsh
+#     export PS1="%{$fg[green]%}[ros1]%{$reset_color%} %n@%m:%~\$ "
+# }
 
 # Function to source ROS2 and change the prompt
-ros2() {
-    source /opt/ros/foxy/setup.zsh
-    export PS1="%{$fg[red]%}[ros2]%{$reset_color%} %n@%m:%~\$ "
-}
+# ros2() {
+#     source /opt/ros/foxy/setup.zsh
+#     export PS1="%{$fg[red]%}[ros2]%{$reset_color%} %n@%m:%~\$ "
+# }
 
 alias mgf2='gf2 -ex "break main" -ex "run"'
 alias wpi='ssh berry@192.168.2.15'
@@ -314,3 +314,7 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 #xfconf-query -c xfwm4 -p /general/zoom_desktop -s false
 
 alias bsd1='ssh rambo@10.0.0.2'
+
+alias ros1='~/scripts/ros1/connect.sh'
+export PATH="$HOME/programs/lem:$PATH"
+
