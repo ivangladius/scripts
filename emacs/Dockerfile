@@ -15,13 +15,12 @@ RUN pacman -Syu --noconfirm && \
     xorg-server-xvfb
 
 RUN useradd -m dockeruser
-ENV HOME=/home/hostuser
-WORKDIR /home/hostuser
-
-RUN /bin/bash -c "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && \
-                    yes | ~/.config/emacs/bin/doom install"  
+ENV HOME=/home/dockeruser
+WORKDIR /home/dockeruser
 
 USER dockeruser
 
-CMD ["emacs"]
+RUN git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+RUN ~/.config/emacs/bin/doom install --force
 
+CMD ["emacs"]

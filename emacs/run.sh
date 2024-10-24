@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 xhost +local:docker
-sudo docker run --rm \
+docker run --rm -it \
     -e DISPLAY=$DISPLAY \
-    -e HOME=/home/hostuser \
+    -e HOME=/home/dockeruser \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v $HOME:/home/hostuser \
-    -w /home/hostuser \
+    -v $HOME:/home/dockeruser \
+    -w /home/dockeruser \
     --name emacs-docker \
-    emacs-native-docker
-	
+    emacs-native-docker \
+    /bin/bash
 xhost -local:docker
