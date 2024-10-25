@@ -12,15 +12,13 @@ RUN pacman -Syu --noconfirm && \
     wget \
     curl \
     git \
-    xorg-server-xvfb
+    cmake \
+    fd \
+    the_silver_searcher \
+    xorg-server-xvfb \
+    ripgrep
 
 RUN useradd -m dockeruser
-ENV HOME=/home/dockeruser
-WORKDIR /home/dockeruser
-
 USER dockeruser
-
-RUN git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-RUN ~/.config/emacs/bin/doom install --force
 
 CMD ["emacs"]
