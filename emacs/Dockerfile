@@ -14,9 +14,37 @@ RUN pacman -Syu --noconfirm && \
     git \
     cmake \
     fd \
+    sbcl \
     the_silver_searcher \
     xorg-server-xvfb \
-    ripgrep
+    ripgrep \
+    python \
+    python-pip \
+    nodejs \
+    npm \
+    clang \
+    llvm \
+    make \
+    autoconf \
+    automake \
+    texinfo \
+    libgccjit \
+    sqlite \
+    libxml2 \
+    libxslt \
+    aspell \
+    aspell-en \
+    hunspell \
+    hunspell-en_US \
+    shellcheck \
+    tree \
+    htop \
+    tmux \
+    openssh \
+    gnupg \
+    jq \
+    yq \
+    fzf
 
 RUN useradd -m dockeruser
 USER dockeruser

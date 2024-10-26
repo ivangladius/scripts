@@ -318,4 +318,5 @@ alias bsd1='ssh rambo@10.0.0.2'
 alias ros1='~/scripts/ros1/connect.sh'
 export PATH="$HOME/programs/lem:$PATH"
 
-alias e='docker run --rm -it --net=host -v $HOME:/home/dockeruser -w $PWD emacs-native-docker'
+alias e='docker run --rm -it --net=host -v $HOME:/home/dockeruser  emacs-native-docker'
+alias lem='$HOME/programs/lem/lem -i ncurses'
