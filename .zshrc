@@ -320,3 +320,4 @@ export PATH="$HOME/programs/lem:$PATH"
 
 alias e='docker run --rm -it --net=host -v $HOME:/home/dockeruser  emacs-native-docker'
 alias lem='$HOME/programs/lem/lem -i ncurses'
+alias sbcl='rlwrap sbcl'
