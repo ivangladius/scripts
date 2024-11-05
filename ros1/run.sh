@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run -it --privileged \
+docker run -it \
   --env DISPLAY=$DISPLAY \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --name ros1-env-container \

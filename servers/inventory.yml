@@ -1,0 +1,6 @@
+servers:
+  hosts:
+    vps3:
+      ansible_host: max@128.140.10.7
+    vps4:
+      ansible_host: alien@185.198.234.13

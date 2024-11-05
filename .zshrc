@@ -152,9 +152,9 @@ alias ssh='TERM=xterm-256color ssh'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-#alias vim='helix'
+alias vim='helix'
 #alias nvim='helix'
-alias vim='nvim'
+#alias vim='nvim'
 alias nvim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
@@ -313,7 +313,7 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 #scroll faster and bind it there
 #xfconf-query -c xfwm4 -p /general/zoom_desktop -s false
 
-alias bsd1='ssh rambo@10.0.0.2'
+alias alp1='ssh rambo@10.100.8.145'
 
 alias ros1='~/scripts/ros1/connect.sh'
 export PATH="$HOME/programs/lem:$PATH"
@@ -321,3 +321,13 @@ export PATH="$HOME/programs/lem:$PATH"
 alias e='docker run --rm -it --net=host -v $HOME:/home/dockeruser  emacs-native-docker'
 alias lem='$HOME/programs/lem/lem -i ncurses'
 alias sbcl='rlwrap sbcl'
+alias sexec="ansible servers -i $HOME/scripts/servers/inventory.yml -m shell -a "
+alias nfs="cd /mnt/nfs_wireguard && ls"
+
+aes256-encrypt() {
+	openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
+}
+
+aes256-decrypt() {
+	openssl enc -d -aes-256-cbc -pbkdf2 -in $1 -out $2
+}
