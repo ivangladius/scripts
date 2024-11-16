@@ -152,9 +152,9 @@ alias ssh='TERM=xterm-256color ssh'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias vim='helix'
+#alias vim='helix'
 #alias nvim='helix'
-#alias vim='nvim'
+alias vim='nvim'
 alias nvim='nvim'
 alias v='nvim $(find ~ -type f | fzf)'
 alias vv='nvim $(find . -type f | fzf)'
@@ -226,7 +226,11 @@ alias fc='fast_copy'
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
 alias vpsconn3='ssh max@128.140.10.7'
+vps3scp() {
+	scp -r $1 :
+}
 alias vpsconn4='ssh root@185.198.234.13'
+
 alias vpsconn4user='ssh alien@185.198.234.13'
 alias pi='ssh pi@192.168.178.82'
 alias sv1='ssh rambo@10.100.8.145'
@@ -236,8 +240,12 @@ alias da='lazydocker'
 
 export VPS='181.215.69.116'
 export VPS2='152.53.16.238'
-export VPS3='128.140.10.7'
-export VPS4='185.198.234.13'
+export VPS3ADDR='128.140.10.7'
+export VPS3='max@128.140.10.7'
+
+export VPS4ADDR='185.198.234.13'
+export VPS4='alien@185.198.234.13'
+
 export PI='192.168.178.82'
 export SV1='10.100.8.145'
 
@@ -324,6 +332,10 @@ alias sbcl='rlwrap sbcl'
 alias sexec="ansible servers -i $HOME/scripts/servers/inventory.yml -m shell -a "
 alias nfs="cd /mnt/nfs_wireguard && ls"
 
+scopy() {
+	ansible servers -i $HOME/scripts/servers/inventory.yml -m copy -a "src=$1 dest=$2"
+}
+
 aes256-encrypt() {
 	openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
 }
@@ -331,3 +343,5 @@ aes256-encrypt() {
 aes256-decrypt() {
 	openssl enc -d -aes-256-cbc -pbkdf2 -in $1 -out $2
 }
+
+
