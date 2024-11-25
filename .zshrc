@@ -113,7 +113,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/alien/programs/graalvm/graalvm-jdk-17.0.11+7.1/bin:$PATH"
 export PATH="/home/max/flutter/flutter/bin:$PATH"
 
-setxkbmap -option caps:escape
+#setxkbmap -option caps:escape
 xset r rate 200 40
 
 alias e='emacsclient_open'
@@ -336,12 +336,21 @@ scopy() {
 	ansible servers -i $HOME/scripts/servers/inventory.yml -m copy -a "src=$1 dest=$2"
 }
 
-aes256-encrypt() {
-	openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
+encrypt() {
+	#openssl enc -aes-256-gcm -salt -pbkdf2 -in "$1" -out "$2"
+	if [[ -z "$1" || -z "$2" ]];then
+		echo "usage: encrypt <file-to-encrypt> <encrypted-file-name>"
+    else
+        gpg --pinentry-mode loopback --symmetric --cipher-algo AES256 --output "$2" "$1"
+    fi
 }
 
-aes256-decrypt() {
-	openssl enc -d -aes-256-cbc -pbkdf2 -in $1 -out $2
+decrypt() {
+	#openssl enc -d -aes-256-gcm -pbkdf2 -in "$1" -out "$2"
+	if [[ -z "$1" || -z "$2" ]];then
+		echo "usage: decrypt <encrypted-file> <output-file-name>"
+	else
+        gpg --pinentry-mode loopback --decrypt --output "$2" "$1"
+    fi
 }
-
 
