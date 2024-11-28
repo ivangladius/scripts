@@ -354,3 +354,6 @@ decrypt() {
     fi
 }
 
+export WORKER=10.100.8.137
+alias worker="ssh worker@$WORKER"
+
