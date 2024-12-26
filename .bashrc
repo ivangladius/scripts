@@ -165,14 +165,27 @@ fast_copy() {
 # }
 alias fc='fast_copy'
 # alias fcic='fast_copy_into_cwd'
+export VPS='181.215.69.116'
+export VPS2='152.53.16.238'
+export VPS3ADDR='128.140.10.7'
+export VPS3='max@128.140.10.7'
+
+export VPS4ADDR='185.198.234.13'
+export VPS4='alien@185.198.234.13'
+
+export PI='192.168.178.82'
+export SV1='10.100.8.145'
+
 
 alias vpsconn='ssh root@181.215.69.116'
 alias vpsconn2='ssh root@152.53.16.238'
+alias vpsconn3='ssh max@128.140.10.7'
+vps3scp() {
+	scp -r $1 :
+}
+alias vpsconn4='ssh root@185.198.234.13'
 
 alias g='lazygit'
-
-export VPS='181.215.69.116'
-export VPS2='152.53.16.238'
 
 # PS1='[\u@\h \W]\$ '
 
@@ -230,19 +243,11 @@ link_arm32_asm() {
 
 #alias vim='devtools nvim'
 #alias g='devtools lazygit'
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 
 alias ma='. venv/bin/activate'
 alias md='deactivate'
-
-alias vpsconn='ssh root@181.215.69.116'
-alias vpsconn2='ssh root@152.53.16.238'
-alias vpsconn3='ssh root@128.140.10.7'
-
-export VPS='181.215.69.116'
-export VPS2='152.53.16.238'
-export VPS3='128.140.10.7'
 
 # generate_golang_script() {
 #     set -x
@@ -302,3 +307,9 @@ EOF
     cd ..
     echo "done"
 }
+
+export PATH="/home/jack/.qlot/bin:$PATH"
+alias da='lazydocker'
+alias clg='ssh hacker@pwn.college'
+
+#source ./startup.sh
