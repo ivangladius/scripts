@@ -311,5 +311,8 @@ EOF
 export PATH="/home/jack/.qlot/bin:$PATH"
 alias da='lazydocker'
 alias clg='ssh hacker@pwn.college'
+export PATH="/home/asdf/.local/bin:$PATH"
+#export PATH="$HOME/jdk-23.0.1/bin:$PATH"
 
 #source ./startup.sh
+alias n='nautilus --new-window . &>/dev/null &'

@@ -1,21 +1,20 @@
 font:
   normal:
-    family: Hack
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   bold:
-    family: Hack
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   italic:
-    family: Hack
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Hack
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
-
-  size: 9
+  size: 12
 colors:
   name: TokyoNight Night
   author: Folke
@@ -49,4 +48,4 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xff9e64' }
     - { index: 17, color: '0xdb4b4b' }
-theme: Tokyonight_Night
+theme: Tokyonight_Night`
