@@ -316,3 +316,6 @@ export PATH="/home/asdf/.local/bin:$PATH"
 
 #source ./startup.sh
 alias n='nautilus --new-window . &>/dev/null &'
+alias cutter='QT_SCALE_FACTOR=2.0 cutter'
+
+export QT_SCALE_FACTOR=2.0
