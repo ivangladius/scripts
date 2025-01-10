@@ -187,7 +187,7 @@ alias vpsconn4='ssh root@185.198.234.13'
 
 alias g='lazygit'
 
-# PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\n > '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -318,4 +318,20 @@ export PATH="/home/asdf/.local/bin:$PATH"
 alias n='nautilus --new-window . &>/dev/null &'
 alias cutter='QT_SCALE_FACTOR=2.0 cutter'
 
-export QT_SCALE_FACTOR=2.0
+#export QT_SCALE_FACTOR=2.0
+export PATH="$HOME/.cargo/bin:$PATH"
+alias vim='helix'
+alias code='code &>/dev/null'
+alias tconf='vim $HOME/.tmux.conf'
+alias trel='tmux source-file $HOME/.tmux.conf'
+alias d='tmux detach'
+
+connect_to_tmux_session() {
+    SESSION=$(tmux list-sessions | fzf | awk '{print $1}')
+    if [[ -n $SESSION ]]; then
+        tmux attach -t "$SESSION"
+    else
+        echo "No session selected."
+    fi
+}
+alias c='connect_to_tmux_session'
