@@ -320,11 +320,10 @@ alias cutter='QT_SCALE_FACTOR=2.0 cutter'
 
 #export QT_SCALE_FACTOR=2.0
 export PATH="$HOME/.cargo/bin:$PATH"
-alias vim='helix'
+# alias vim='helix'
 alias code='code &>/dev/null'
 alias tconf='vim $HOME/.tmux.conf'
 alias trel='tmux source-file $HOME/.tmux.conf'
-alias d='tmux detach'
 
 connect_to_tmux_session() {
     SESSION=$(tmux list-sessions | fzf | awk '{print $1}')
@@ -334,4 +333,14 @@ connect_to_tmux_session() {
         echo "No session selected."
     fi
 }
-alias c='connect_to_tmux_session'
+alias de='tmux detach'
+alias dl='connect_to_tmux_session'
+
+
+cat_or_bat() {
+    if command -v bat &>/dev/null; then
+	alias cat='bat'
+    fi
+}
+
+cat_or_bat
