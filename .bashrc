@@ -344,3 +344,4 @@ cat_or_bat() {
 }
 
 cat_or_bat
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
