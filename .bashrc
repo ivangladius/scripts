@@ -321,7 +321,7 @@ alias cutter='QT_SCALE_FACTOR=2.0 cutter'
 #export QT_SCALE_FACTOR=2.0
 export PATH="$HOME/.cargo/bin:$PATH"
 # alias vim='helix'
-alias code='code &>/dev/null'
+#alias code='code &>/dev/null'
 alias tconf='vim $HOME/.tmux.conf'
 alias trel='tmux source-file $HOME/.tmux.conf'
 
@@ -345,3 +345,5 @@ cat_or_bat() {
 
 cat_or_bat
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+
+alias code='codium'
