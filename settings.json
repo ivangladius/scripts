@@ -267,14 +267,14 @@
     "git.openRepositoryInParentFolders": "never",
     "dotnetAcquisitionExtension.enableTelemetry": false,
     "vim.showmodename": false,
-    "zenMode.hideStatusBar": false,
+    "zenMode.hideStatusBar": true,
     "arduino.useArduinoCli": true,
     "editor.cursorSmoothCaretAnimation": "on",
     "workbench.settings.applyToAllProfiles": [
       "editor.fontFamily"
     ],
-    "editor.inlayHints.fontFamily": "Hack",
-    "editor.inlayHints.fontSize": 13,
+    // "editor.inlayHints.fontFamily": "Hack",
+    // "editor.inlayHints.fontSize": 13,
     "cursor.cmdk.useThemedDiffBackground": true,
     "cmake.showOptionsMovedNotification": false,
     "leetcode.hint.configWebviewMarkdown": false,
@@ -312,6 +312,6 @@
     "stm32-for-vscode.openOCDPath": "/usr/bin/openocd",
     "stm32-for-vscode.makePath": "/usr/bin/make",
     "stm32-for-vscode.armToolchainPath": "/usr/bin",
-    "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+    "workbench.colorTheme": "GitHub Dark Default",
     "workbench.activityBar.location": "hidden"
 }

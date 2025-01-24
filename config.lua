@@ -74,27 +74,27 @@ cmp.setup({
   }),
 })
 
-local opts = {
-    settings = {
-        ["rust-analyzer"] = {
-            lens = {
-                enable = false,
-            },
-            checkOnSave = {
-                enable = true,
-                command = "clippy",
-            }
-        },
-        ["jdtls"] = {
-            lens = {
-                enable = false,
-            },
-        }
-    }
-}
+-- local opts = {
+--     settings = {
+--         ["rust-analyzer"] = {
+--             lens = {
+--                 enable = false,
+--             },
+--             checkOnSave = {
+--                 enable = true,
+--                 command = "clippy",
+--             }
+--         },
+--         ["jdtls"] = {
+--             lens = {
+--                 enable = false,
+--             },
+--         }
+--     }
+-- }
 
-require('lvim.lsp.manager').setup("rust_analyzer", opts)
-require('lvim.lsp.manager').setup("jdtls", opts)
+-- require('lvim.lsp.manager').setup("rust_analyzer", opts)
+-- require('lvim.lsp.manager').setup("jdtls", opts)
 
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 

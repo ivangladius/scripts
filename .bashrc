@@ -100,21 +100,21 @@ alias l='ls --color=auto'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias v='nvim $(find ~ -type f | fzf)'
-alias vv='nvim $(find . -type f | fzf)'
-alias vs='sudo nvim $(sudo find / -type f | fzf)'
-alias vim='nvim'
+alias v='lvimi $(find ~ -type f | fzf)'
+alias vv='lvimi $(find . -type f | fzf)'
+alias vs='sudo lvimi $(sudo find / -type f | fzf)'
+alias vim='lvimi'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
-alias pconf='nvim ~/scripts/fastpdf.sh'
-alias bconf='nvim ~/.bashrc && source ~/.bashrc'
-alias yconf='nvim ~/.zshrc && source ~/.zshrc'
-alias nconf='nvim ~/.config/nvim/init.lua'
-alias iconf='nvim ~/.config/i3/config'
-alias qconf='nvim ~/.config/qtile/config.py'
+alias pconf='lvim ~/scripts/fastpdf.sh'
+alias bconf='lvim ~/.bashrc && source ~/.bashrc'
+alias yconf='lvim ~/.zshrc && source ~/.zshrc'
+alias nconf='lvim ~/.config/lvimi/init.lua'
+alias iconf='lvim ~/.config/i3/config'
+alias qconf='lvim ~/.config/qtile/config.py'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -125,7 +125,7 @@ alias c='cd $(find ~/ -type d | fzf) && ls'
 
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
-    nvim $(grep -rni $1 | fzf)
+    lvimi $(grep -rni $1 | fzf)
 }
 
 # alias vf='grep_vim'
@@ -189,8 +189,8 @@ alias g='lazygit'
 
 PS1='[\u@\h \W]\n > '
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
 
 alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
 alias xin='sudo xbps-install'
@@ -241,7 +241,7 @@ link_arm32_asm() {
 # 	fi
 # }
 
-#alias vim='devtools nvim'
+#alias vim='devtools lvimi'
 #alias g='devtools lazygit'
 #. "$HOME/.cargo/env"
 
@@ -347,3 +347,11 @@ cat_or_bat
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 alias code='codium'
+
+export PATH="$PATH:/home/asdf/.foundry/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias acode='cursor . &>/dev/null &'
