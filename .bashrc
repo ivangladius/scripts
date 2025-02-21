@@ -100,21 +100,21 @@ alias l='ls --color=auto'
 
 # alias h='bash -c "$(history | awk '{print $2}' | fzf)"'
 
-alias v='lvimi $(find ~ -type f | fzf)'
-alias vv='lvimi $(find . -type f | fzf)'
-alias vs='sudo lvimi $(sudo find / -type f | fzf)'
-alias vim='lvimi'
+alias v='vim $(find ~ -type f | fzf)'
+alias vv='vim $(find . -type f | fzf)'
+alias vs='sudo nvim $(sudo find / -type f | fzf)'
+alias vim='nvim'
 
 alias grep='grep --color=auto'
 alias r='. ranger'
 alias z='zellij'
 
-alias pconf='lvim ~/scripts/fastpdf.sh'
-alias bconf='lvim ~/.bashrc && source ~/.bashrc'
-alias yconf='lvim ~/.zshrc && source ~/.zshrc'
-alias nconf='lvim ~/.config/lvimi/init.lua'
-alias iconf='lvim ~/.config/i3/config'
-alias qconf='lvim ~/.config/qtile/config.py'
+alias pconf='nvim ~/scripts/fastpdf.sh'
+alias bconf='nvim ~/.bashrc && source ~/.bashrc'
+alias yconf='nvim ~/.zshrc && source ~/.zshrc'
+alias nconf='nvim ~/.config/nvimi/init.lua'
+alias iconf='nvim ~/.config/i3/config'
+alias qconf='nvim ~/.config/qtile/config.py'
 
 alias te='translate :en'
 alias td='translate :de'
@@ -125,7 +125,7 @@ alias c='cd $(find ~/ -type d | fzf) && ls'
 
 alias cs='cd $(sudo find / -type d | fzf) && ls'
 grep_vim() {
-    lvimi $(grep -rni $1 | fzf)
+    nvimi $(grep -rni $1 | fzf)
 }
 
 # alias vf='grep_vim'
@@ -189,8 +189,8 @@ alias g='lazygit'
 
 PS1='[\u@\h \W]\n > '
 
-export EDITOR='lvim'
-export VISUAL='lvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 alias xu='sudo xbps-install xbps && sudo xbps-install -Suv'
 alias xin='sudo xbps-install'
@@ -241,7 +241,7 @@ link_arm32_asm() {
 # 	fi
 # }
 
-#alias vim='devtools lvimi'
+#alias vim='devtools nvimi'
 #alias g='devtools lazygit'
 #. "$HOME/.cargo/env"
 
@@ -322,7 +322,7 @@ alias cutter='QT_SCALE_FACTOR=2.0 cutter'
 export PATH="$HOME/.cargo/bin:$PATH"
 # alias vim='helix'
 #alias code='code &>/dev/null'
-alias tconf='vim $HOME/.tmux.conf'
+alias tconf='nvim $HOME/.tmux.conf'
 alias trel='tmux source-file $HOME/.tmux.conf'
 
 connect_to_tmux_session() {
@@ -355,3 +355,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias acode='cursor . &>/dev/null &'
+
+export PATH="$PATH:/home/ok/.foundry/bin"
+
+export AMOY_TESTNET_URL="https://rpc-amoy.polygon.technology/"
+export AMOY_CHAINID="80002"
+export PATH="$HOME/.local/bin/:$PATH"
+alias 8b='ollama run deepseek-r1:8b'
+alias 14b='ollama run deepseek-r1:14b'
+
+alias acode='cursor . &>/dev/null --no-sandbox &'
+
+alias worker='ssh worker@10.0.0.2'

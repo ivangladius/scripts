@@ -1,0 +1,6 @@
+
+ubuntu nvim clangd iostream not found:
+
+   sudo apt install libstdc++-14-dev
+
+
